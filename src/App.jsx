@@ -1,15 +1,18 @@
 import "./App.css";
 import { DrinkButtons } from "./components/DrinkButtons";
+import { DrinkChoice } from "./components/DrinkChoice";
+import { coffee, tea } from "./components/utils/data";
 
 export const App = () => {
   const greeting = "Welcome!";
-  const description = <p>This app is going to change your life.</p>;
+  const userDrink = tea;
 
   return (
     <div className="app">
       <h1>{greeting}</h1>
-      {description}
-      <DrinkButtons />
+
+      <DrinkButtons drinkOne={tea.name} drinkTwo={coffee.name} />
+      <DrinkChoice drink={userDrink} />
     </div>
   );
 };
