@@ -3,15 +3,21 @@ import { DrinkItems } from "./DrinkItems";
 import { Input } from "./UI/Input";
 import { availableDrinks } from "./utils/data";
 
-export const DrinkSearch = () => {
-  const [searchField, setSearchField] = useState("test drink");
+export const DrinkSearch = ({ onClick }) => {
+  const [searchField, setSearchField] = useState("");
+
+  const handleChange = (event) => setSearchField(event.target.value);
+
+  const matchedDrinks = availableDrinks.filter((drink) => {
+    return drink.name.toLowerCase().includes(searchField.toLowerCase());
+  });
 
   return (
     <>
       <label>Search for a drink</label>
-      <Input />
+      <Input onChange={handleChange} />
       <br />
-      <DrinkItems drinks={availableDrinks} />
+      <DrinkItems drinks={matchedDrinks} onClick={onClick} />
     </>
   );
 };

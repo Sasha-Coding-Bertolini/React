@@ -1,8 +1,10 @@
-export const DrinkItem = ({ drink }) => {
+export const DrinkItem = ({ drink, onClick }) => {
   return (
     <>
-      <img src={drink.imgUrl} alt={drink.alt} width={50} height={50} />
-      <p>{drink.name}</p>
+      <button onClick={() => onClick(drink)}>
+        <img src={drink.imgUrl} alt={drink.alt} width={50} height={50} />
+        <p>{drink.name}</p>
+      </button>
     </>
   );
 };

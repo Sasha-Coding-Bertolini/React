@@ -1,1 +1,1 @@
-export const Input = () => <input></input>;
+export const Input = ({ onChange }) => <input onChange={onChange}></input>;
