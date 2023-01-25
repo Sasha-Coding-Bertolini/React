@@ -1,1 +1,5 @@
-export const Input = ({ onChange }) => <input onChange={onChange}></input>;
+import { Input } from "@chakra-ui/react";
+
+export const TextInput = ({ onChange }) => (
+  <Input variant="filled" onChange={onChange} w={200} m={5} />
+);

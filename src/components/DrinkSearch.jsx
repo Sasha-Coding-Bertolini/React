@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DrinkItems } from "./DrinkItems";
-import { Input } from "./UI/Input";
+import { TextInput } from "./UI/Input";
 import { availableDrinks } from "./utils/data";
 
 export const DrinkSearch = ({ onClick }) => {
@@ -15,7 +15,7 @@ export const DrinkSearch = ({ onClick }) => {
   return (
     <>
       <label>Search for a drink</label>
-      <Input onChange={handleChange} />
+      <TextInput onChange={handleChange} />
       <br />
       <DrinkItems drinks={matchedDrinks} onClick={onClick} />
     </>
